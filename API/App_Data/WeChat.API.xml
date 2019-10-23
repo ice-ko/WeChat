@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WeChat.API</name>
+    </assembly>
+    <members>
+        <member name="F:WeChat.API.Controllers.WeChatController.httpHelper">
+            <summary>
+            获取http请求
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Controllers.WeChatController.redisCache">
+            <summary>
+            redis缓存
+            </summary>
+        </member>
+        <member name="M:WeChat.API.Controllers.WeChatController.WeChatCheck(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            验证微信签名
+            </summary>
+            * 将token、timestamp、nonce三个参数进行字典序排序
+            * 将三个参数字符串拼接成一个字符串进行sha1加密
+            * 开发者获得加密后的字符串可与signature对比，标识该请求来源于微信。
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.API.Controllers.WeChatController.QueryAccessToken">
+            <summary>
+            获取微信access_token
+            </summary>
+        </member>
+        <member name="M:WeChat.API.Controllers.WeChatController.CreateMenu(WeChat.API.Models.WeChatMenu)">
+            <summary>
+            创建菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.API.Models.WeChatMenu">
+            <summary>
+            创建菜单
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.WeChatMenu.button">
+            <summary>
+            一级菜单数组，个数应为1~3个
+            </summary>
+        </member>
+        <member name="T:WeChat.API.Models.Button">
+            <summary>
+            一级菜单数组，个数应为1~3个
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Button.name">
+            <summary>
+            菜单标题，不超过16个字节，子菜单不超过60个字节
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Button.type">
+            <summary>
+            菜单的响应动作类型，view表示网页类型，click表示点击类型，miniprogram表示小程序类型
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Button.key">
+            <summary>
+            菜单KEY值，用于消息接口推送，不超过128字节 
+            click等点击类型必须
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Button.media_id">
+            <summary>
+            调用新增永久素材接口返回的合法media_id
+            media_id类型和view_limited类型必须
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Button.sub_button">
+            <summary>
+            二级菜单数组，个数应为1~5个
+            </summary>
+        </member>
+        <member name="T:WeChat.API.Models.Sub_Button">
+            <summary>
+            二级菜单数组，个数应为1~5个
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Sub_Button.type">
+            <summary>
+            菜单的响应动作类型，view表示网页类型，click表示点击类型，miniprogram表示小程序类型
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Sub_Button.name">
+            <summary>
+            菜单标题，不超过16个字节，子菜单不超过60个字节
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Sub_Button.url">
+            <summary>
+            网页链接，用户点击菜单可打开链接，不超过1024字节。type为miniprogram时，不支持小程序的老版本客户端将打开本url。
+            view、miniprogram类型必须
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Sub_Button.appid">
+            <summary>
+            小程序的appid（仅认证公众号可配置）
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Sub_Button.pagepath">
+            <summary>
+            小程序的页面路径
+            </summary>
+        </member>
+        <member name="P:WeChat.API.Models.Sub_Button.key">
+            <summary>
+            菜单KEY值，用于消息接口推送，不超过128字节
+            </summary>
+        </member>
+        <member name="T:WeChat.API.Models.WeCahtBackdata`1">
+            <summary>
+            系统返回信息
+            </summary>
+            <typeparam name="T">指定返回类型</typeparam>
+        </member>
+        <member name="F:WeChat.API.Models.WeCahtBackdata`1.ResponseState">
+            <summary>
+            接口返回数据状态true成功|false失败
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeCahtBackdata`1.ResponseData">
+            <summary>
+            接口返回正确数据
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeCahtBackdata`1.ErrorData">
+            <summary>
+            接口返回错误时间
+            </summary>
+        </member>
+        <member name="T:WeChat.API.Models.WeChatApperror">
+            <summary>
+            微信接口返回错误类
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatApperror.errcode">
+            <summary>
+            接口错误代码
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatApperror.errmsg">
+            <summary>
+            接口错误消息
+            </summary>
+        </member>
+        <member name="T:WeChat.API.Models.WeChatAaccessToken">
+            <summary>
+            获取接口返回凭证Token
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatAaccessToken.access_token">
+            <summary>
+            获取到的凭证
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatAaccessToken.expires_in">
+            <summary>
+            凭证有效时间，单位：秒
+            </summary>
+        </member>
+        <member name="T:WeChat.API.Models.WeChatOpenidlist">
+            <summary>
+            获取用户OpenID列表
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatOpenidlist.total">
+            <summary>
+            关注该公众账号的总用户数
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatOpenidlist.count">
+            <summary>
+            拉取的OPENID个数，最大值为10000
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatOpenidlist.data">
+            <summary>
+            列表数据，OPENID的列表
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatOpenidlist.next_openid">
+            <summary>
+            拉取列表的最后一个用户的OPENID
+            </summary>
+        </member>
+        <member name="T:WeChat.API.Models.Data">
+            <summary>
+            openid对象
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.Data.openid">
+            <summary>
+            用户标识
+            </summary>
+        </member>
+        <member name="T:WeChat.API.Models.WeChatUserInfo">
+            <summary>
+            获取用户个人信息
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.subscribe">
+            <summary>
+            是否订阅该公众号0没有关注|1已关注
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.openid">
+            <summary>
+            用户的标识，对当前公众号唯一
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.nickname">
+            <summary>
+            用户的昵称
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.sex">
+            <summary>
+            用户的性别0未知|1男性|2女性
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.city">
+            <summary>
+            用户所在城市
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.country">
+            <summary>
+            用户所在国家
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.province">
+            <summary>
+            用户所在省份
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.language">
+            <summary>
+            用户的语言
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.headimgurl">
+            <summary>
+            用户头像,最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像）
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.subscribe_time">
+            <summary>
+            用户关注时间
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.unionid">
+            <summary>
+            绑定到微信开放平台唯一标识
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.remark">
+            <summary>
+            粉丝备注
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.groupid">
+            <summary>
+            用户所在的分组ID（兼容旧的用户分组接口）
+            </summary>
+        </member>
+        <member name="F:WeChat.API.Models.WeChatUserInfo.tagid_list">
+            <summary>
+            用户被打上的标签ID列表
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{76AAEC75-A2F9-4768-BCD5-457A4C0E899F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiCommonality", "ApiCommonality", "{ED410972-1A96-4B92-A610-BACB7EFD4361}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeChat.API", "API\WeChat.API.csproj", "{17CCE88B-4077-4464-9753-DC2589AAFD91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{A89BF76F-2577-44CB-84AF-A0C802D08107}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeChat.Components.Tools", "Components\WeChat.Components.Tools\WeChat.Components.Tools.csproj", "{840E24D3-290C-44BE-93F3-A7B479821713}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17CCE88B-4077-4464-9753-DC2589AAFD91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17CCE88B-4077-4464-9753-DC2589AAFD91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17CCE88B-4077-4464-9753-DC2589AAFD91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17CCE88B-4077-4464-9753-DC2589AAFD91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840E24D3-290C-44BE-93F3-A7B479821713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840E24D3-290C-44BE-93F3-A7B479821713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840E24D3-290C-44BE-93F3-A7B479821713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840E24D3-290C-44BE-93F3-A7B479821713}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{17CCE88B-4077-4464-9753-DC2589AAFD91} = {76AAEC75-A2F9-4768-BCD5-457A4C0E899F}
+		{840E24D3-290C-44BE-93F3-A7B479821713} = {A89BF76F-2577-44CB-84AF-A0C802D08107}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01E28B26-ED90-4CE6-94C7-757A39AE73A1}
+	EndGlobalSection
+EndGlobal
