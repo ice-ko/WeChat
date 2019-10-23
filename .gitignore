@@ -1,0 +1,8 @@
+/API/obj
+/API/bin
+/API/Logs
+/API/*
+/ApiCommonality/obj
+/Components/Tools/bin
+/Components/Tools/obj
+/API/*.log
